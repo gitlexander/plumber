@@ -1,5 +1,4 @@
 # server.R
-install.packages("plumber")
 library(plumber)
 
 r <- plumb("plumber.R")  # 'plumber.R' is your API script
