@@ -1,4 +1,3 @@
-install.packages("plumber")
 library(plumber)
 
 # Define your R function as an endpoint
