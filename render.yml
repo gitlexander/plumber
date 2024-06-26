@@ -1,6 +1,6 @@
 services:
   - type: web
     name: plumber-api
-    env: node
+    env: python
     buildCommand: "R -e 'install.packages(c(\"plumber\"))'"
     startCommand: "Rscript server.R"
