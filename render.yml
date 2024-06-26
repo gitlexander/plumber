@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: plumber-api
+    env: r
+    buildCommand: "R -e 'plumber::plumb(\"plumber.R\")$run(host=\"0.0.0.0\", port=as.numeric(Sys.getenv(\"PORT\", \"8000\")))'"
+    startCommand: "Rscript server.R"
