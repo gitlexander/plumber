@@ -1,8 +1,7 @@
 services:
   - type: web
     name: plumber-api
-    env: static
-    buildCommand: "Rscript -e 'install.packages(\"plumber\")'"
-    startCommand: "Rscript server.R"
-    envVars:
-      R_VERSION: 4.3.3  # Replace with the desired R version
+    env: docker
+    dockerfilePath: Dockerfile
+    buildCommand: ""  # Leave empty since Dockerfile handles the build
+    startCommand: "Rscript server.R"  # This is handled by Docker CMD
