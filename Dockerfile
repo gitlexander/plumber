@@ -1,5 +1,5 @@
 # Use an official R base image
-FROM rocker/r.ver:4.3.3
+FROM rocker/r.ver:3.5.2
 
 # Install necessary system dependencies
 RUN apt-get update -qq && \
