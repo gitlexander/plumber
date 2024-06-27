@@ -2,10 +2,15 @@
 FROM r-base:4.0.5
 
 # Install necessary system dependencies
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    usrmerge && \
+    apt-get install -y --no-install-recommends \
     libcurl4-openssl-dev \
     libssl-dev \
-    libxml2-dev
+    libxml2-dev && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 # Install Plumber and other R packages
 RUN R -e "install.packages(c('plumber', 'jsonlite'), repos='https://cran.rstudio.com/')"
